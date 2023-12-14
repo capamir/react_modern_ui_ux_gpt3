@@ -1,13 +1,5 @@
-import SubHeading from './SubHeading/SubHeading';
-import Newsletter from './Footer/Newsletter';
-import FooterOverlay from './Footer/FooterOverlay';
-import MenuItem from './Menuitem/MenuItem';
-import Navbar from './Navbar/Navbar';
-
-export {
-  SubHeading,
-  Newsletter,
-  FooterOverlay,
-  MenuItem,
-  Navbar,
-};
+export { default as Article } from './article/Article';
+export { default as Brand } from './brand/Brand';
+export { default as CTA } from './cta/CTA';
+export { default as Feature } from './feature/Feature';
+export { default as Navbar } from './navbar/Navbar';

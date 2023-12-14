@@ -1,87 +1,50 @@
-import { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { MdOutlineRestaurantMenu } from "react-icons/md";
-import images from "../../constants/images";
-import "./Navbar.css";
+import React, { useState } from 'react';
+import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+import logo from '../../logo.svg';
+import './navbar.css';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <nav className="app__navbar">
-      <div className="app__navbar-logo">
-        <img src={images.gericht} alt="app__logo" />
+    <div className="gpt3__navbar">
+      <div className="gpt3__navbar-links">
+        <div className="gpt3__navbar-links_logo">
+          <img src={logo} />
+        </div>
+        <div className="gpt3__navbar-links_container">
+          <p><a href="#home">Home</a></p>
+          <p><a href="#wgpt3">What is GPT3?</a></p>
+          <p><a href="#possibility">Open AI</a></p>
+          <p><a href="#features">Case Studies</a></p>
+          <p><a href="#blog">Library</a></p>
+        </div>
       </div>
-      <ul className="app__navbar-links">
-        <li className="p__opensans">
-          <a href="#home">Home</a>
-        </li>
-        <li className="p__opensans">
-          <a href="#about">About</a>
-        </li>
-        <li className="p__opensans">
-          <a href="#menu">Menu</a>
-        </li>
-        <li className="p__opensans">
-          <a href="#awards">Awards</a>
-        </li>
-        <li className="p__opensans">
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-      <div className="app__navbar-login">
-        <a href="#login" className="p__opensans">
-          Log In / Registration
-        </a>
-        <div />
-        <a href="/" className="p__opensans">
-          Book Table
-        </a>
+      <div className="gpt3__navbar-sign">
+        <p>Sign in</p>
+        <button type="button">Sign up</button>
       </div>
-      <div className="app__navbar-smallscreen">
-        <GiHamburgerMenu
-          color="#fff"
-          fontSize={27}
-          onClick={() => setToggleMenu(true)}
-        />
+      <div className="gpt3__navbar-menu">
+        {toggleMenu
+          ? <RiCloseLine color="#fff" size={27} onClick={() => setToggleMenu(false)} />
+          : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(true)} />}
         {toggleMenu && (
-          <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
-            <MdOutlineRestaurantMenu
-              fontSize={27}
-              className="overlay__close"
-              onClick={() => setToggleMenu(false)}
-            />
-            <ul className="app__navbar-smallscreen_links">
-              <li>
-                <a href="#home" onClick={() => setToggleMenu(false)}>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about" onClick={() => setToggleMenu(false)}>
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#menu" onClick={() => setToggleMenu(false)}>
-                  Menu
-                </a>
-              </li>
-              <li>
-                <a href="#awards" onClick={() => setToggleMenu(false)}>
-                  Awards
-                </a>
-              </li>
-              <li>
-                <a href="#contact" onClick={() => setToggleMenu(false)}>
-                  Contact
-                </a>
-              </li>
-            </ul>
+        <div className="gpt3__navbar-menu_container scale-up-center">
+          <div className="gpt3__navbar-menu_container-links">
+            <p><a href="#home">Home</a></p>
+            <p><a href="#wgpt3">What is GPT3?</a></p>
+            <p><a href="#possibility">Open AI</a></p>
+            <p><a href="#features">Case Studies</a></p>
+            <p><a href="#blog">Library</a></p>
           </div>
+          <div className="gpt3__navbar-menu_container-links-sign">
+            <p>Sign in</p>
+            <button type="button">Sign up</button>
+          </div>
+        </div>
         )}
       </div>
-    </nav>
+    </div>
   );
 };
 
