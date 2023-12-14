@@ -1,30 +1,32 @@
 import {
+  AboutUs,
+  Chef,
+  FindUs,
   Footer,
-  Blog,
-  Possibility,
-  Features,
-  WhatGPT3,
+  Gallery,
   Header,
-} from "./containers";
-import { CTA, Brand, Navbar } from "./components";
+  Intro,
+  Laurels,
+  SpecialMenu,
+} from "./container";
+import { Navbar } from "./components";
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <div className="gradient__bg">
-        <Navbar />
-        <Header />
-      </div>
-      <Brand />
-      <WhatGPT3 />
-      <Features />
-      <Possibility />
-      <CTA />
-      <Blog />
+    <div>
+      <Navbar />
+      <Header />
+      <AboutUs />
+      <SpecialMenu />
+      <Chef />
+      <Intro />
+      <Laurels />
+      <Gallery />
+      <FindUs />
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
